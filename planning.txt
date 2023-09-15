@@ -1,0 +1,22 @@
+Book my show planning
+
+We need a reusable carousel
+Hero carousel
+Common carousel
+Cast carousel(small)
+
+##### Pages #####
+
+Home Page
+Movie Page
+Categories Page
+Razorpay payment gateway
+
+Plan how we are building import
+
+Layouts
+Routes
+Pages
+Components
+
+// react-slick npm website is used for Carousal
