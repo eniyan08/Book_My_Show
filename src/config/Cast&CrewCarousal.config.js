@@ -1,9 +1,8 @@
-
-const settings = {
+const CarousalSettings = {
     infinite: false,
     autoplay: false,
-    slidesToShow: 5,
-    slidesToScroll: 4,
+    slidesToShow: 6,
+    slidesToScroll: 3,
     InitialSlide: 0,
     responsive: [
         {
@@ -37,4 +36,4 @@ const settings = {
     ]
 }
 
-export default settings
+export default CarousalSettings

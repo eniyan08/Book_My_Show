@@ -15,12 +15,13 @@ const PosterSlider = (props) => {
                 props.isDark ? "text-white" : "text-gray-700"
             }`}>{props.subtitle}</p>
 
-        </div>
-          <Slider {...settings}>
-            {props.images.map((data)=> {
-                return(
-                    <Poster {...data} isDark={props.isDark} />
-                )
+          </div>
+           
+            <Slider {...settings}>
+                {props.images.map((data)=> {
+                    return(
+                      <Poster {...data} isDark={props.isDark} />
+                    )
             })}
           </Slider>
         </>
