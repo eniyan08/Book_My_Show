@@ -8,28 +8,28 @@ const CarousalSettings = {
         {
             breakpoint: 1280,   // for above 1024 pixels
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 2,
+                slidesToShow: 5,
+                slidesToScroll: 3,
             }
         },  
         {
             breakpoint: 1024,   // for 1024 pixels
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 5,
                 slidesToScroll: 2,
             }
         },    
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 4,
                 slidesToScroll: 2,
             }
         },
         {
             breakpoint: 400,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 3,
                 slidesToScroll: 1,
             }
         },

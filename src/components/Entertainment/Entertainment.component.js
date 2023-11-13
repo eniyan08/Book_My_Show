@@ -5,8 +5,8 @@ import Slider from "react-slick";
 const EntertainmentCard = (props) => {
     return (
         <>
-        <div className='w-full h-30 lg:pb-12 md:pb-4 sm:pb-2 px-4 pt-4'>
-            <img className='w-full h-full sm:w-full h-full rounded-3xl '
+        <div className='w-full h-30 pb-2 lg:pb-12 md:pb-4 sm:pb-2 px-4 pt-4'>
+            <img className='w-full h-full sm:w-full h-full rounded-xl '
                  src={props.src}
                  alt="Entertainment Image"
             />    
@@ -27,17 +27,16 @@ const EntertainmentCardSlider = () => {
         "https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/theatre-shows-collection-202211140440.png",
         "https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-NCBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/dance-classes-collection-202211140440.png",
     ];
-
-    const settingsMD = {
+    const settingsLG = {
         infinite: true,
         autoplay: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 4,
         InitialSlide: 0,
-        rows: 2
-    }
+        
+    } 
 
-    const settingsLG = {
+    const settingsMD = {
         infinite: true,
         autoplay: false,
         slidesToShow: 5,
@@ -46,13 +45,36 @@ const EntertainmentCardSlider = () => {
         
     }
 
-    const settingsSM = {
+    const settingsSM1 = {
+        infinite: true,
+        autoplay: false,
+        slidesToShow: 4,
+        slidesToScroll: 2,
+        InitialSlide: 0,
+        rows: 1,
+        // swipeToSlide: true,
+    }
+
+    const settingsSM2 = {
+        breakpoint: 640,
+        infinite: true,
+        autoplay: false,
+        slidesToShow: 3,
+        slidesToScroll: 4,
+        InitialSlide: 0,
+        rows: 2,
+        // swipeToSlide: true,
+    }
+
+    const settingsSM3 = {
+        breakpoint: 400,
         infinite: true,
         autoplay: false,
         slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToScroll: 4,
         InitialSlide: 0,
-        rows: 2
+        rows: 2,
+        // swipeToSlide: true,
     }
 
     return (
@@ -75,17 +97,27 @@ const EntertainmentCardSlider = () => {
             ))}
         </Slider>
         </div>
-
         
 
-        <div className='md:hidden sm:block'>
+        <div className='hidden sm:block md:hidden'>
             {/* this is for small screen */}
-        <Slider {...settingsSM}>
+        <Slider {...settingsSM1}>
             {EntertainmentImage.map((image) => (
                 <EntertainmentCard src={image} />
             ))}
         </Slider>
         </div>
+
+        <div className='sm:hidden'>
+            {/* this is for very small screen */}
+        <Slider {...settingsSM2}>
+            {EntertainmentImage.map((image) => (
+                <EntertainmentCard src={image} />
+            ))}
+        </Slider>
+        </div>
+
+        
         </>
     )
 }

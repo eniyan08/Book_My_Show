@@ -1,36 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiChevronRight, BiSearch, BiChevronDown, BiMenu } from "react-icons/bi"
 import SecondaryNav from "./secondarynav.component";
-const NavSm = () => {
+import Menu from "./Menu.component";
+import HeroCarousal from "../HeroCarousal/HeroCarousal.component";
+
+
+const NavSm = (props) => {
     return (
         <>
-        <div className="text-white flex items-center justify-between">
-            <div>
+        <div className="container mx-auto text-white flex items-center justify-between">
+            <div className="px-2 py-1 flex flex-col">
                 <h3 className="text-xl font-bold">It All Starts Here!</h3>
                 <span className="text-gray-400 text-xs flex items-center hover:text-white cursor-pointer">
                     Chennai <BiChevronRight/>
                 </span>
             </div>
+            <div className="px-2">
             <div className="w-8 h-8">
                 <BiSearch className="w-full h-full"/>
             </div>
+            </div>
         </div>
+        {/* {props.Carousal ? <HeroCarousal/> : <div/>} */}
         </>
     )
 }
-const NavMd = () => {
+const NavMd = (props) => {
     return(
-        <div className="w-full flex items-center bg-white gap-3 px-3 py-2 rounded-md">
+        <>
+        <div className="bg-gray-800 w-full px-2 py-1">
+        <div className="w-full flex items-center bg-white gap-3 px-6 py-2 rounded-lg">
             <BiSearch />
             <input type="search" className="w-full focus:outline-none   " placeholder="Search for movies, events, place, sport and activities"/>
         </div>
+        </div>
+        {/* {props.Carousal ? <HeroCarousal/> : <div/>} */}
+        </>
     )
 }
-const NavLg = () => {
+const NavLg = (props) => {
+
+    const [menu, setMenu] = useState(false)
+    const handleCallback = () => {
+        setMenu(!menu)
+    }
+    // const ref = useRef();
     return(
     <>
-    
-    <div className="container mx-auto px-20 py-1 flex items-center justify-between">
+    <div className="flex flex-col bg-gray-700 ">
+    <div className="container mx-auto  2xl:px-32 xl:px-16 lg:px-10 py-1 flex items-center justify-between">
         <div className="flex items-center w-1/2">
             <div className="w-half h-12 px-4">
                 <img src="https://in.bmscdn.com/webin/common/icons/logo.svg" alt="Bookmyshow" className="w-full h-full "/>
@@ -42,7 +60,7 @@ const NavLg = () => {
             </div>
         </div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pr-2">
             <span className="text-gray-400 text-xs flex items-center hover:text-white cursor-pointer">
                 Chennai
                 <BiChevronDown/>
@@ -51,38 +69,48 @@ const NavLg = () => {
                 Sign in
             </button>
             <div className="w-8 h-8 text-white">
-                <BiMenu className="w-full h-full"/>
+                <BiMenu onClick={() => {setMenu(!menu)}} 
+                        className="w-full h-full"
+                />
+                
             </div>
         </div>
         
     </div>
-
-
+    
+    <SecondaryNav />
+    
+    </div>
+    {props.Carousal ? <HeroCarousal/> : <div/>}
+    <Menu show={menu}
+          parentCallback = {handleCallback}
+          onClickOutside={() => {setMenu(!menu)}}/>
+    {/* onClickOutside is also a parentCallback */}
     </>
     )
 }
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <>
-          <nav className="px-12 bg-gray-700 ">
-            <div className="md:hidden">
+          
+            <div className=" bg-gray-800 md:hidden">
                 {/* Mobile Screen */}
-                <NavSm />
+                <NavSm Carousal = {props.carousal}/>
             </div>
 
             <div className="hidden lg:hidden md:flex">
                 {/* Tablet Screen */}
-                <NavMd />
+                <NavMd Carousal = {props.carousal}/>
             </div>
 
-            <div className="hidden lg:flex">
+            <div className="hidden lg:block">
                 {/* Large Screen */}
-                <NavLg/>
+                <NavLg Carousal = {props.carousal}/>
             </div>
-          </nav>
+          
       
-          <SecondaryNav />
+          
           
         </>
     )

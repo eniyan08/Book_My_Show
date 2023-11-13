@@ -1,57 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import Poster from "../components/Poster/poster.component"
 import PlaysFilter from "../components/PlaysFilters/PlaysFilters.component";
+import PlaysData from "../config/FilterData.config";
+import Plays from "../config/Plays.config";
+import Filter from "./Filter.page";
+import { SlLocationPin } from 'react-icons/sl'
+import { BiFilterAlt } from 'react-icons/bi'
 
-const PlaysPage = () => {
+const PlaysPage = () => {    
+    const [isVisible, setIsVisible] = useState(true)
+    const [show, setShow] = useState(true)
+    // Callback function to handle data received from the child component
+    const handleCallback1 = () => {
+      // Update the name in the component's state
+      setShow(!show) 
+    } 
+    const handleCallback2 = () => {
+      setIsVisible(!isVisible)
+    }
     return (
         <>
-          <div className="container mx-auto px-4">
-            <div className="w-full lg:flex lg:flex-row-reverse">
+          <div style={{visibility: isVisible ? "visible" : "hidden"}}
+               disabled={!isVisible}
+               className="relative z-0 container mx-auto xl:px-16 pt-4 lg:pt-14 md:pt-6 ">
+            <div className="w-full lg:flex justify-center lg:flex-row-reverse md:flex flex-col-reverse gap-8 ">
               {/* !!!! row reversed !!!!*/}
               <div className="lg:w-8/12">
-              <h2 className="text-2xl font-bold mb-4">Plays in Chennai</h2>
+              <h2 className="text-2xl font-bold ml-3 mb-4">Plays in Chennai</h2>
               <div className="flex flex-wrap">
-                <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
-                  <Poster 
-                  src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA4IE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00370063-lsnrsspcmy-portrait.jpg'
-                  title='4Play'
-                  subtitle='Tamil ₹300'/>
+              {Plays.map((data) => {
+                return(
+                  <div className="object-scale-down w-1/2 md:w-1/4 lg:w-1/4">
+                  <Poster {...data}
+                  isStatic={true}/>
                 </div>
-
-                <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
-                  <Poster 
-                  src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA4IE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00370063-lsnrsspcmy-portrait.jpg'
-                  title='4Play'
-                  subtitle='Tamil ₹300'/>
-                </div>
-
-                <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
-                  <Poster 
-                  src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA4IE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00370063-lsnrsspcmy-portrait.jpg'
-                  title='4Play'
-                  subtitle='Tamil ₹300'/>
-                </div>  
-
-                <div className="w-1/2 md:w-1/3 my-3 lg:w-1/4">
-                  <Poster 
-                  src='https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA4IE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00370063-lsnrsspcmy-portrait.jpg'
-                  title='4Play'
-                  subtitle='Tamil ₹300'/>
-                </div> 
+                )
+              })}
+                
               </div>
               </div>
 
-              <div className="lg:w-1/4">
+              <div className="hidden lg:block lg:w-1/5 ">
                 <h1 className='text-2xl font-bold mb-4'>Filters</h1>
-                <div>
-                  <PlaysFilter />
+                <div className=" flex flex-col gap-2">
+                
+                {PlaysData.map((data) => {
+                  return (
+                    <div className='bg-white border-2 border-slate-50 rounded pl-2 py-1'>
+                      <PlaysFilter 
+                        {...data}
+                      />
+                    </div>
+                  )
+                })}
+
+                </div>        
+                <div className="border-2 border-red-400 rounded-md text-center py-1 mt-3">
+                  <h className='text-red-500'>Browse by Venues</h>
                 </div>
               </div>
             </div>
 
+            <div className="container mx-auto fixed bottom-8 lg:hidden z-20">
+              <div className="relative container mx-auto flex">
+                <div className="flex bg-navRed-400 ml-3 text-white text-md rounded-full px-4 py-3">            
+                  <SlLocationPin className="mt-1 mr-2"/>         
+                  <h className=''>Browse by Venues</h>               
+                </div>  
+                
+                <button onClick={() => {setShow(!show);
+                                        setIsVisible(!isVisible)}} 
+                className="absolute right-3 md:mr-6 bg-navRed-400 text-white rounded-full px-2 py-1">
+                  <BiFilterAlt className='w-6 h-6 my-2 mx-1 '/>
+                </button> 
+            </div>
+            </div>   
           </div>
+
+{/* below part is only visible when filter button is clicked */}
+          
+          {/* Filter is the child component */}
+          {/* This page (Plays.page.js) is the parent component */}
+          <Filter status={show}
+                  parentCallback1 = {handleCallback1}
+                  parentCallback2 = {handleCallback2}
+                  filterData = {PlaysData}/>
+
+          
+          
         </>
     )
-}
+  }
 
 export default PlaysPage

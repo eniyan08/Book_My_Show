@@ -9,7 +9,7 @@ import { Route } from "react-router-dom"
 // Layouts
 import DefaultLayout from "../layouts/Default.layout"
 
-const DefaultHOC = ({ component: Component, ...also_props}) => {
+const DefaultHOC = ({ component: Component,isHome, ...also_props}) => {
     // destructuring the component and spreading the property
 
     return(
@@ -19,7 +19,7 @@ const DefaultHOC = ({ component: Component, ...also_props}) => {
           {...also_props} 
 
           component = {(props) => (
-             <DefaultLayout>  {/*  DefaultLayout is the parent */}
+             <DefaultLayout isHome={isHome}>  {/*  DefaultLayout is the parent */}
                 <Component {...props} /> {/* Component is the child */}
             </DefaultLayout>
           )}

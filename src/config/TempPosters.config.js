@@ -88,4 +88,67 @@ export const Premieres = [
     },
 ]
 
+export const OutdoorEvents = [
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxNCBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00367996-wrrxgegsxg-portrait.jpg",
+        alt: "Vanambadi",
+        title: "Vanambadi Light Music",
+        subtitle: "The Music Academy Mini Hall"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCAyNyBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00367575-gesxrbmsxy-portrait.jpg",
+        alt: "ICC",
+        title: "PAKISTAN VS SOUTH AFRICA",
+        subtitle: "Chepauk Stadium"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA4IE9jdCBvbndhcmRz,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00307957-dnbssspnen-portrait.jpg",
+        alt: "Snow Kingdom",
+        title: "Snow Kingdom Chennai",
+        subtitle: "Chennai"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCA0IE5vdg%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00371565-hspzbdjhjl-portrait.jpg",
+        alt: "Who are you",
+        title: "Who are you by Rahul",
+        subtitle: "Music Academy"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCA4IE9jdA%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00367551-ppqqcfxnbj-portrait.jpg",
+        alt: "ICC",
+        title: "INDIA VS AUSTRALIA",
+        subtitle: "Chepauk"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-TW9uLCAyMyBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00367571-qqmdyrxmpt-portrait.jpg",
+        alt: "ICC",
+        title: "PAKISTAN VS AFGANISTAN",
+        subtitle: "Chepauk"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-RnJpLCAxMyBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00367558-wdlrsefkqe-portrait.jpg",
+        alt: "ICC",
+        title: "NEW ZEALAND VS BANGLADESH",
+        subtitle: "Chepauk"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-VGh1LCAxMiBPY3Qgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00355125-kfnkdyyqcn-portrait.jpg",
+        alt: "Music",
+        title: "Kisi Ko Batana Mat",
+        subtitle: "Bengaluru"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-V2VkLCAxOCBPY3Q%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00367563-mdhdjhkwxg-portrait.jpg",
+        alt: "ICC",
+        title: "NEW ZEALAND VS AFGANISTAN",
+        subtitle: "Chepauk"
+    },
+    {
+        src: "https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAyNiBOb3Y%3D,ots-29,otc-FFFFFF,oy-612,ox-24:q-80/et00366777-ltfcyygnbm-portrait.jpg",
+        alt: "Tour",
+        title: "India Tour",
+        subtitle: "Chennai"
+    },
+]
+
 export default TempPosters
